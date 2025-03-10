@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+html, body {
+  overscroll-behavior: none;
+  overflow: auto;
+  height: 100%;
+}
+
+/* Se serve anche per i contenitori scrollabili interni */
+.scrollable-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Per un migliore scrolling su dispositivi mobili */
+  height: 100%;
+}

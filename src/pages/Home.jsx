@@ -1,69 +1,129 @@
-
+import React from 'react';
+import toast from 'react-hot-toast';
+import { useState } from 'react';
+import AnimatedLogo from '../components/ui/animatedLogo';
 
 const Home = () => {
-    return (
-        <div className="min-h-screen bg-gradient-to-b from-indigo-500 to-purple-600 text-white">
-            <header className="py-8">
-                <nav className="container mx-auto flex justify-between items-center">
-                    <h1 className="text-3xl font-bold">FakeApp</h1>
-                    <div>
-                        <a href="/login" className="px-4 py-2 bg-indigo-700 hover:bg-indigo-800 rounded mr-2">
-                            Login
-                        </a>
-                        <a href="/register" className="px-4 py-2 bg-purple-700 hover:bg-purple-800 rounded">
-                            Register
-                        </a>
+
+  const [counter, setCounter] = useState(0);
+
+  const handleClick = () => {
+    setCounter(prevCounter => prevCounter + 1);
+  };
+
+  if (counter === 5) {
+    // Quando il counter raggiunge 5, generiamo un errore
+    throw new Error('I crashed when counter reached 5!');
+  }
+
+  return (
+    <div className="">
+      <div className="container mx-auto px-4 z-20">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
+            Eureka, it works! <span className="text-sm font-medium text-gray-600">i hope </span>
+          </h1>
+          <AnimatedLogo width="32" height="32" />
+          <div className="p-6 bg-green-100 rounded-lg my-8">
+            <p className="text-lg text-green-700 font-medium">
+              Great! The template has been configured correctly. <br /> You can procede by deleting the content of this page and start building your app.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg p-6 text-left border-4 border-l-rose-600 border-t-0 border-r-0 border-b-0">
+            <h2 className="text-xl font-bold mb-4 text-rose-600">
+              Project Information
+            </h2>
+            <p className="text-gray-700 mb-4">
+              This is a minimal React + Tailwind CSS template. It includes:
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-gray-700">
+              <li>React 19 with optimized Vite configuration</li>
+              <li>Tailwind CSS 4.0 preconfigured</li>
+              <li>React Router for navigation</li>
+              <li>Ready-to-use layout components</li>
+              <li>i18n support for internationalization</li>
+              <li>Lucide React icons integrated</li>
+            </ul>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 text-left border-4 border-l-rose-600 border-t-0 border-r-0 border-b-0 mt-8">
+            <h2 className="text-xl font-bold mb-4 text-rose-600">
+              Toast Notifications
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <button
+                onClick={() => toast.error('This is an error toast!')}
+                className="p-4 bg-red-500 hover:bg-red-700 text-white rounded shadow"
+              >
+                Show Error Toast
+              </button>
+              <button
+                onClick={() => toast.success('This is a success toast!')}
+                className="p-4 bg-green-500 hover:bg-green-700 text-white rounded shadow"
+              >
+                Show Success Toast
+              </button>
+              <button
+                onClick={() => {
+                  const toastId = toast.loading('Loading...');
+                  setTimeout(() => {
+                    toast.dismiss(toastId);
+                    toast.success('Loading complete!');
+                  }, 2000);
+                }}
+                className="p-4 bg-blue-100 hover:bg-blue-200 text-blue-800 rounded shadow"
+              >
+                Show Loading Toast
+              </button>
+              <button
+                onClick={() =>
+                  toast.custom((t) => (
+                    <div
+                      className={`${t.visible ? 'animate-enter' : 'animate-leave'
+                        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex p-4`}
+                    >
+                      <div className="flex-1">
+                        <p className="text-sm font-medium text-gray-900">
+                          Custom toast notification!
+                        </p>
+                        <p className="mt-1 text-sm text-gray-500">
+                          This is a custom toast with custom styling.
+                        </p>
+                      </div>
+                      <button
+                        onClick={() => toast.dismiss(t.id)}
+                        className="ml-4 flex-shrink-0 text-gray-400 hover:text-gray-500"
+                      >
+                        Close
+                      </button>
                     </div>
-                </nav>
-            </header>
-            <section className="container mx-auto py-16">
-                <div className="text-center">
-                    <h2 className="text-5xl font-extrabold mb-4">Welcome to FakeApp</h2>
-                    <p className="text-xl mb-8">
-                        Experience an application built with passion and attention to detail. Enjoy stunning visuals, seamless navigation, and a user-friendly interface.
-                    </p>
-                    <a href="/register" className="bg-white text-indigo-500 px-8 py-3 rounded-full text-lg font-semibold shadow-md hover:bg-gray-100">
-                        Get Started
-                    </a>
-                </div>
-            </section>
-            <section className="container mx-auto py-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-                    <p className="text-lg">
-                        To revolutionize digital experiences with innovative design and cutting-edge technology that empower users around the world.
-                    </p>
-                </div>
-                <div>
-                    <h3 className="text-3xl font-bold mb-4">Features</h3>
-                    <ul className="list-disc list-inside text-lg space-y-2">
-                        <li>Innovative design</li>
-                        <li>User-friendly interface</li>
-                        <li>Seamless navigation</li>
-                        <li>Responsive layouts</li>
-                    </ul>
-                </div>
-            </section>
-            <section className="container mx-auto py-16">
-                <h3 className="text-4xl font-bold text-center mb-8">Testimonials</h3>
-                <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-                    <div className="bg-white text-gray-800 p-6 rounded shadow-md max-w-sm">
-                        <p>"FakeApp transformed the way I connect with technology. Truly a game-changer!"</p>
-                        <p className="mt-4 text-right text-sm">- Alex Doe</p>
-                    </div>
-                    <div className="bg-white text-gray-800 p-6 rounded shadow-md max-w-sm">
-                        <p>"A stellar blend of beauty and functionality. I recommend FakeApp to everyone."</p>
-                        <p className="mt-4 text-right text-sm">- Jamie Doe</p>
-                    </div>
-                </div>
-            </section>
-            <footer className="bg-indigo-700 py-8 mt-16">
-                <div className="container mx-auto text-center">
-                    <p>&copy; {new Date().getFullYear()} FakeApp. All rights reserved.</p>
-                </div>
-            </footer>
+                  ))
+                }
+                className="p-4 bg-purple-100 hover:bg-purple-200 text-purple-800 rounded shadow"
+              >
+                Show Custom Toast
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 text-left border-4 border-l-rose-600 border-t-0 border-r-0 border-b-0 mt-8">
+            <h2 className="text-xl font-bold mb-4 text-rose-600">
+              Error Boundary Example
+            </h2>
+            <p className="mb-4 text-gray-600">
+              This counter will crash when it reaches 5!! now it's {counter}
+            </p>
+            <button
+              onClick={handleClick}
+              className="px-4 py-2 bg-rose-600 text-white rounded hover:bg-rose-700 transition-colors"
+            >
+              Increment
+            </button>
+          </div>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
+};
 
 export default Home;

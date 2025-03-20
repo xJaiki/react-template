@@ -1,0 +1,21 @@
+{
+  "i18nDemo": {
+    "title": "Internationalization Demo",
+    "subtitle": "A demonstration of i18n capabilities",
+    "selectTitle": "Select a language",
+    "examplesTitle": "Translation Examples",
+    "greetingLabel": "Greeting",
+    "greeting": "Hello! Welcome to the i18n demo.",
+    "dateTimeLabel": "Date and Time Formatting",
+    "dateTime": "Current date: {{date, datetime}}",
+    "numbersLabel": "Number Formatting",
+    "price": "The price is {{price, number}}",
+    "pluralsLabel": "Pluralization",
+    "items_zero": "You have no items",
+    "items_one": "You have {{count}} item",
+    "items_other": "You have {{count}} items",
+    "howItWorksTitle": "How It Works",
+    "howItWorksDesc": "This demo uses react-i18next for internationalization. Translation files are stored in the locales directory.",
+    "usageDesc": "To use i18n in your components, import the useTranslation hook and use the t function to translate your text."
+  }
+}

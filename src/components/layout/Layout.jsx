@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Home, User, ExternalLink, Globe, Menu, X } from 'lucide-react';
 import logo from '../../assets/logo.svg';
-import AnimatedLogo from '../ui/animatedLogo';
-import { AnimatedLogoWithText } from '../ui/animatedLogo';
+import AnimatedLogo from '../ui/AnimatedLogo';
+import { AnimatedLogoWithText } from '../ui/AnimatedLogo';
 
 const Layout = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

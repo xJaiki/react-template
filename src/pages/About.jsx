@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AnimatedLogo from '../components/ui/animatedLogo';
+import AnimatedLogo from '../components/ui/AnimatedLogo';
 
 const About = () => {
   const age = new Date().getFullYear() - 1999;

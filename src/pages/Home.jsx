@@ -1,7 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import { useState } from 'react';
-import AnimatedLogo from '../components/ui/animatedLogo';
+import AnimatedLogo from '../components/ui/AnimatedLogo';
 
 const Home = () => {
 

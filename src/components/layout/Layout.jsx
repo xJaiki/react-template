@@ -140,7 +140,7 @@ const Layout = ({ children }) => {
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="mb-2 md:mb-0">
               <div className="font-bold text-xl flex items-center justify-center text-rose-600">
-                <AnimatedLogoWithText width='8' height='8' className="text-rose-600" />
+                <AnimatedLogoWithText width='2' height='2' className="text-rose-600" />
               </div>
             </div>
             {/* <div className="flex space-x-6">

@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 const AnimatedLogo = ({ width = "64", height = "64" }) => {
   const [clickCount, setClickCount] = useState(0);
   const [easterEggActivated, setEasterEggActivated] = useState(false);
-  const [rotationDegree, setRotationDegree] = useState(0);
   const [colorPhase, setColorPhase] = useState(0);
   const animationRef = useRef(null);
   const lastTimeRef = useRef(0);
@@ -178,14 +177,14 @@ const AnimatedLogo = ({ width = "64", height = "64" }) => {
     `;
 
   return (
-    <div className="flex justify-center items-center">
+    <div className={` flex justify-center items-center`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 129.56 115.83"
-        className={`w-${width} h-${height}`}
         style={{
-          transform: easterEggActivated ? `rotate(${rotationDegree}deg)` : 'none',
-          transition: 'transform 0.2s ease'
+          transition: 'transform 0.2s ease',
+          width: `${width}rem`,
+          height: `${height}rem`
         }}
       >
         <defs>

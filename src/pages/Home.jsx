@@ -23,7 +23,7 @@ const Home = () => {
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6">
             Eureka, it works! <span className="text-sm font-medium text-gray-600">i hope </span>
           </h1>
-          <AnimatedLogo width="32" height="32" />
+          <AnimatedLogo width="10" height="10" />
           <div className="p-6 bg-green-100 rounded-lg my-8">
             <p className="text-lg text-green-700 font-medium">
               Great! The template has been configured correctly. <br /> You can procede by deleting the content of this page and start building your app.

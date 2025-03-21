@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
               className="flex items-center font-bold text-xl text-rose-600"
               style={{ marginLeft: '-0.8rem' }}
             >
-              <AnimatedLogoWithText width='8' height='8' />
+              <AnimatedLogoWithText width='2' height='2' />
 
 
             </Link>
